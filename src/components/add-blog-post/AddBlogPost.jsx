@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import {useOutletContext} from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 const AddBlogPost = () => {
-
     const { onAddBlogPost } = useOutletContext();
     const [image, setImage] = useState('');
     const [title, setTitle] = useState('');
@@ -21,49 +20,41 @@ const AddBlogPost = () => {
     };
 
     return (
-        <div>
+        <div className="container mt-4">
             <form>
-                <div>
-                    <label>
-                        Image URL:
-                        <input
-                            type="text"
-                            value={image}
-                            name="image" // Change the name to "image"
-                            id="image"
-                            onChange={(e) => setImage(e.target.value)}
-                        />
-                    </label>
+                <div className="mb-3">
+                    <label htmlFor="image" className="form-label">Image URL:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="image"
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
+                    />
                 </div>
-                <div>
-                    <label>
-                        Title:
-                        <input
-                            type="text"
-                            value={title}
-                            name="title" // Change the name to "title"
-                            id="title"
-                            onChange={(e) => setTitle(e.target.value)}
-                        />
-                    </label>
+                <div className="mb-3">
+                    <label htmlFor="title" className="form-label">Title:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
                 </div>
-                <div>
-                    <label>
-                        Post text:
-                        <input
-                            type="text"
-                            value={text}
-                            name="text" // Change the name to "text"
-                            id="text"
-                            onChange={(e) => setText(e.target.value)}
-                        />
-                    </label>
+                <div className="mb-3">
+                    <label htmlFor="text" className="form-label">Post text:</label>
+                    <textarea
+                        className="form-control"
+                        id="text"
+                        rows="3"
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                    ></textarea>
                 </div>
-                <div>
-                    <button type="button" onClick={handleSubmit}>
-                        Add Blog Post
-                    </button>
-                </div>
+                <button type="button" className="btn btn-primary" onClick={handleSubmit}>
+                    Add Blog Post
+                </button>
             </form>
         </div>
     );

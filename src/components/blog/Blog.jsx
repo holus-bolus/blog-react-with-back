@@ -15,7 +15,7 @@ const Blog = () => {
                     </li>
                 ))}
             </ul>
-            <Link to={'/add-blog-post'}>Add the new blog post</Link>
+            <Link to={'/add-blog-post'} className={'link'}>Add the new blog post</Link>
         </div>
     );
 };

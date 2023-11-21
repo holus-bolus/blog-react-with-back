@@ -1,0 +1,6 @@
+@import "reset.css";
+@import "bootstrap/scss/bootstrap.scss";
+
+.link{
+    text-decoration: none;
+}
